@@ -1,2 +1,3 @@
 #!/usr/bin/env tclsh
-puts "<html></html>"
+set markdown [read stdin]
+puts "<p>$markdown</p>"
