@@ -1,7 +1,10 @@
 SITE=_site
 SPECVERSION=$(shell perl -ne 'print $$1 if /^version: *([0-9.]+)/' spec.txt)
 
-.PHONY: all clean npm
+.PHONY: all clean npm tcltest
+
+tcltest:
+	python3 test/spec_tests.py --program tcl/commonmark.tcl
 
 all: spec.html # spec.pdf spec.md
 
@@ -27,3 +30,6 @@ npm:
 
 clean:
 	-rm spec.tex spec.md spec.html
+
+
+	
